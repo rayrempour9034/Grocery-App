@@ -12,7 +12,7 @@ import CoreData
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     
-    var list
+    var list = []
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
     
-        return 1
+        return list.count
     
     }
    
@@ -38,4 +38,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     }
     
+    @IBAction func addButton(sender: AnyObject)
+    {
+        let alertController = UIAlertController(title: "Add An Item", message:
+            "Add", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
+   
 }
